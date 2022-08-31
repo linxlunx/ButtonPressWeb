@@ -16,7 +16,11 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            Home
+                            {% if '/auth/' in request.path %}
+                                Home
+                            {% else %}
+                                Login/Register
+                            {% endif %}
                         </li>
                     </ul>
                 </div>
