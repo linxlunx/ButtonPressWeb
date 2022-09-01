@@ -3,13 +3,22 @@
     <div class="card border-0 shadow rounded-3 my-5">
         <div class="card-body p-4 p-sm-5">
             <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
-            <form>
+             {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {% for error in form.errors %}
+                    <span style="font-size: small">{{ error }}</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" placeholder="Username">
+                    {{ form.username }}
                     <label>Username</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" placeholder="Password">
+                    {{ form.password }}
                     <label>Password</label>
                 </div>
 

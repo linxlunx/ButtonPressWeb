@@ -17,12 +17,12 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             {% if '/auth/' in request.path %}
-                                Home
+                                <a href="{% url 'home_index' %}">Home</a>
                             {% else %}
                                 {% if request.user.is_authenticated %}
-                                    Logout
+                                    <a href="{% url 'auth_logout' %}">Logout</a>
                                 {% else %}
-                                    Login/Register
+                                    <a href="{% url 'auth_login' %}">Login/Register</a>
                                 {% endif %}
                             {% endif %}
                         </li>

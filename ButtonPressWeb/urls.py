@@ -21,5 +21,5 @@ from button_clicks import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('auth.urls')),
-    path('', views.button_clicks_home, name='index'),
+    path('', views.button_clicks_home, name='home_index'),
 ]
