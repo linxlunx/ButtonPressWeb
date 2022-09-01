@@ -5,9 +5,11 @@
             <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
              {% if form.errors %}
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {% for error in form.errors %}
-                    <span style="font-size: small">{{ error }}</span>
+                {% for field in form %}
+                    {% if field.errors %}
+                    <span style="font-size: small">{{ field.name }}: {{ field.errors|striptags }}</span><br/>
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    {% endif %}
                 {% endfor %}
             </div>
             {% endif %}
@@ -20,6 +22,8 @@
                 <div class="form-floating mb-3">
                     {{ form.password }}
                     <label>Password</label>
+                    <small id="passwordHelp" class="form-text text-muted">*Password must contain at least 8
+                        characters</small>
                 </div>
 
                 <div class="d-grid">

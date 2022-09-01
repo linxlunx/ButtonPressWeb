@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'button_clicks',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,10 @@ WSGI_APPLICATION = 'ButtonPressWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / env.str('DB_NAME', 'db.sqlite3'),
+        'TEST': {
+            'NAME': 'db-test.sqlite3'
+        }
     }
 }
 

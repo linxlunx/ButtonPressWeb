@@ -5,13 +5,27 @@
             <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
             {% if form.errors %}
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {% for error in form.errors %}
-                    <span style="font-size: small">{{ error }}</span>
+                {% for field in form %}
+                    {% if field.errors %}
+                        {% if 'Wrong' in field.errors|striptags %}
+                            <span style="font-size: small">{{ field.errors|striptags }}</span><br/>
+                        {% else %}
+                            <span style="font-size: small">{{ field.name }}: {{ field.errors|striptags }}</span><br/>
+                        {% endif %}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {% for message in messages %}
+                    <span style="font-size: small">{{ message }}</span><br/>
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 {% endfor %}
             </div>
             {% endif %}
-            <form>
+            <form method="POST">
                 {% csrf_token %}
                 <div class="form-floating mb-3">
                     {{ form.username }}
