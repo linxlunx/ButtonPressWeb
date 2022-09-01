@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from button_clicks import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('auth.urls')),
+    path('', views.button_clicks_home, name='index'),
 ]

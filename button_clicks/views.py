@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def button_clicks_home(request):
+    return render(request, 'button_clicks/home.html')

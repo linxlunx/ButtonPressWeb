@@ -19,7 +19,11 @@
                             {% if '/auth/' in request.path %}
                                 Home
                             {% else %}
-                                Login/Register
+                                {% if request.user.is_authenticated %}
+                                    Logout
+                                {% else %}
+                                    Login/Register
+                                {% endif %}
                             {% endif %}
                         </li>
                     </ul>
