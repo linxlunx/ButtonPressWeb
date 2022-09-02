@@ -134,3 +134,10 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Custom login url
+LOGIN_URL = '/auth/login/'
+
+# Define configurations for click limit
+CLICK_LIMIT_SECONDS = env.int('CLICK_LIMIT_SECONDS', 60)
+CLICK_LIMIT = env.int('CLICK_LIMIT', 5)
