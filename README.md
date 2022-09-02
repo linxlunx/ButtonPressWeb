@@ -48,7 +48,7 @@ $ pip install -r requirements.txt
 ```
 $ python manage.py migrate
 ```
-- Run development server.
+- Run development server (We have to set `DEBUG=True` in `.env` file)
 ```
 $ python manage.py runserver
 ```
