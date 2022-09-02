@@ -100,3 +100,9 @@ $ docker-compose run web python manage.py migrate
 $ docker-compose run web python manage.py collectstatic
 ```
 - We can access the website via http://localhost
+
+## Test
+Run test verbosely with this command
+```
+$ python manage.py test -v 2
+```
