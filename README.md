@@ -87,6 +87,10 @@ to run the project. Make sure you have installed docker and docker-compose in th
 - Copy `.env.example` to `.env`
 - Make sure your database filenames mounted with the same database filename in `.env` file. The default database 
   filename is `db.sqlite3`
+- (Optional) If there is no database file yet, please run this command to create an empty database file
+```
+$ touch db.sqlite3
+```
 - Run docker-compose
 ```
 $ docker-compose up --build -d
