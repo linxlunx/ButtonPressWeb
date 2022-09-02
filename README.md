@@ -24,6 +24,11 @@ SECRET_KEY=SECRET KEY HERE
 # separated by comma
 ALLOWED_HOSTS=0.0.0.0,localhost
 
+# add your domain for csrf trusted origins 
+# if we are using custom domain and not set the domain in the variable, we will get "CSRF verification failed. Request aborted." when doing form post
+# separated by comma
+CSRF_TRUSTED_ORIGINS=0.0.0.0,localhost
+
 # we are using sqlite to save the click data
 # define your database filename here
 # the default database filename is db.sqlite3

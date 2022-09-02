@@ -142,3 +142,5 @@ LOGIN_URL = '/auth/login/'
 # Define configurations for click limit
 CLICK_LIMIT_SECONDS = env.int('CLICK_LIMIT_SECONDS', 60)
 CLICK_LIMIT = env.int('CLICK_LIMIT', 5)
+
+CSRF_TRUSTED_ORIGINS = env.str('CSRF_TRUSTED_ORIGINS', '').split(',')
