@@ -19,15 +19,15 @@ DEBUG=False
 # define django secret key here
 SECRET_KEY=SECRET KEY HERE
 
-# if you want to add allowed domain, just add the domain in this variable
+# if you want to use custom domain, just add the custom domain in this variable
 # already set default allowed host for development and docker
 # separated by comma
-ALLOWED_HOSTS=0.0.0.0,localhost
+ALLOWED_HOSTS=0.0.0.0,localhost,custom-domain
 
-# add your domain for csrf trusted origins 
+# add your full domain (with scheme and other than 80 and 443) for csrf trusted origins 
 # if we are using custom domain and not set the domain in the variable, we will get "CSRF verification failed. Request aborted." when doing form post
 # separated by comma
-CSRF_TRUSTED_ORIGINS=0.0.0.0,localhost
+CSRF_TRUSTED_ORIGINS=0.0.0.0,localhost,http://custom-domain:custom-port
 
 # we are using sqlite to save the click data
 # define your database filename here
