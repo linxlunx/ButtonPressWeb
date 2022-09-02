@@ -27,7 +27,7 @@ ALLOWED_HOSTS=0.0.0.0,localhost,custom-domain
 # add your full domain (with scheme and port if using port other than 80 and 443) for csrf trusted origins 
 # if we are using custom domain and not set the domain in the variable, we will get "CSRF verification failed. Request aborted." when doing form post
 # separated by comma
-CSRF_TRUSTED_ORIGINS=0.0.0.0,localhost,http://custom-domain:custom-port
+CSRF_TRUSTED_ORIGINS=http://0.0.0.0,http://localhost,http://custom-domain:custom-port
 
 # we are using sqlite to save the click data
 # define your database filename here
